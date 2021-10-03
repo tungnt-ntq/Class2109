@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table/ form</title>
+  </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid red;
+    }
+  </style>
+  <body>
+    <!-- Tabble -->
+    <table>
+      <tr>
+        <td colspan="2">o1</td>
+        <td>o3</td>
+      </tr>
+      <tr>
+        <td>1.1</td>
+        <td>1.2</td>
+        <td rowspan="2">1.3</td>
+      </tr>
+      <tr>
+        <td>2.1</td>
+        <td>2.2</td>
+      </tr>
+    </table>
+    <!-- Tabble -->
+    <br />
+    <table>
+      <tr>
+        <!-- cell header -->
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Contry</th>
+      </tr>
+      <!-- row -->
+      <tr>
+        <!-- cell -->
+        <td>o1</td>
+        <td>o2</td>
+        <td>o3</td>
+      </tr>
+      <tr>
+        <td>1.1</td>
+        <td>1.2</td>
+        <td>1.3</td>
+      </tr>
+      <tr>
+        <td>2.1</td>
+        <td>2.2</td>
+        <td>2.3</td>
+      </tr>
+      <!-- btvn cho mọi người bài 1: Tạo table có 1 viền -->
+      <!-- bài 2 chạy được server online nhé.... -->
+    </table>
+    <!-- html form -->
+    <!-- method Gett và post -->
+    <form action="link.js" method="POST" autocomplete="on">
+      <label for="">First Name</label>
+      <input type="text" name="first name" /> <br />
+      <label for=""> Last Name</label>
+      <input type="text" name="last name" />
+      <br />
+      <input type="password" />
+      <input type="button" value="123132" />
+      <input type="number" />123
+
+      <br />
+      <!-- checkbox -->
+      <label for="mon">Món ngon</label>
+      <input type="checkbox" name="mon" value="1" />
+      <label for="pho">Phở</label>
+      <input type="checkbox" name="pho" value="2" />
+      <label for="com">Cơm</label>
+      <input type="checkbox" name="com" value="3" />
+      <br />
+      <!-- radio button -->
+      <label for="giới tính">nam</label>
+      <input type="radio" name="gioi tinh" value="1" />
+      <label for="giới tính">nu</label>
+      <input type="radio" name="gioi tinh" value="2" />
+      <label for="giới tính">không biết</label>
+      <input type="radio" name="gioi tinh" value="0" />
+      <br />
+
+      <!-- select box -->
+
+      <select name="filter">
+        <option value="ten">filter theo tên</option>
+        <option value="tuoi">filter theo tuổi</option>
+        <option value="gioitinh">filter theo giới tính</option>
+      </select>
+
+      <br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
