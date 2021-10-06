@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- external style: nên sử nhất-> code clean -->
+
+    <!-- internal style: sử dụng để ghi đè external style -->
+    <!-- dùng line để đè lên external => độ ưu tiên.  -->
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- luôn luôn để cuối cùng -->
+    <style>
+      /* h2 {
+        color: brown;
+        background-color: cadetblue;
+        border-radius: 10em;
+      } */
+      /* * {
+        margin: 0;
+        padding: 0;
+      } */
+      /* quan hệ cha con */
+      /* article > h2 {
+        color: crimson;
+      } */
+      /* quan hệ trong ngoài  */
+      /* article h2 {
+        color: crimson;
+      }
+      h3,
+      h1,
+      h2 {
+        color: cyan;
+      } */
+
+      div:first-child {
+        color: red;
+      }
+      /* span {
+        color: red;
+        font-size: 30px;
+      } */
+      p::first-letter {
+        color: red;
+        font-size: 30px;
+      }
+      p::before {
+        content: "tung";
+        color: red;
+        font-size: 50px;
+      }
+      p::first-line {
+        color: blue;
+      }
+      p::selection {
+        color: yellow;
+        background-color: red;
+      }
+      /* a:hover {
+        color: red;
+      }
+      a:link {
+        color: yellow;
+      }
+      a:visited {
+        color: violet;
+      }
+      a:active {
+        color: blue;
+      } */
+      /* focus, checked */
+      #input-text:focus {
+        width: 200px;
+        border-color: red;
+      }
+      p {
+        color: sandybrown;
+      }
+      #input:checked {
+        width: 100px;
+        height: 100px;
+      }
+      /* Labels for checked inputs */
+      /* input:checked + label {
+        color: red;
+      } */
+
+      /* Radio element, when checked */
+      input[type="radio"]:checked {
+        box-shadow: 0 0 0 3px orange;
+      }
+      a[href="https://www.google.com.vn/"]:hover
+      {
+        color: red;
+      }
+      /* .input-radio:checked {
+        width: 100px;
+        height: 200px;
+      } */
+      html {
+        font-size: 20px;
+      }
+    </style>
+    <!-- Độ ưu tiên của style: nhỏ đến to, từ trong ra ngoài: inline > internal > external -->
+  </head>
+  <body>
+    <!-- inline style : hạn chế sử dụng -> code rối  -->
+    <p id="text-content1">
+      <span>P</span>orem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+      iste officia sit impedit architecto quas quis, facilis eligendi. Itaque
+      autem voluptas debitis earum quidem rem fuga eos enim, velit natus.
+    </p>
+    <p id="text-content2" class="ntq">
+      <span>L</span> ipsum dolor sit amet consectetur, adipisicing elit. Nam
+      iste officia sit impedit architecto quas quis, facilis eligendi. Itaque
+      autem voluptas debitis earum quidem rem fuga eos enim, velit natus.
+    </p>
+    <p id="text-content3" class="ntq">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam iste officia
+      sit impedit architecto quas quis, facilis eligendi. Itaque autem voluptas
+      debitis earum quidem rem fuga eos enim, velit natus.
+    </p>
+    <h2 id="title">Đây là thẻ h2</h2>
+    <h3>Đây là thẻ h3</h3>
+    <input id="input-text" type="text" />
+    <!--active : Chọn các liên kết đã được chọn.
+        :visited : Định dạng cho các thành phần đã được click.
+        :link : Định dạng cho tất cả liên kết khi chưa được click.
+        :hover : Chọn các liên kết được hover (di chuyển chuột lên thành phần).
+-->
+
+    <!-- các loại selector cơ bản -->
+    <article>
+      <div>div1</div>
+      <div>
+        <!-- h2 là cháu của article -->
+        <h2>test</h2>
+      </div>
+    </article>
+    <h2>div2</h2>
+    <a
+      href="https://docs.google.com/presentation/d/1qakCv5vw0hEeZPczdqgGkEqPUQrCeYSj/edit#slide=id.p10"
+    >
+      link đến slide</a
+    >
+    <a href="https://vietnamnet.vn/">Đọc báo</a>
+    <a href="https://www.google.com.vn/">Vào google</a>
+    <h3>Ăn gì hôm nay</h3>
+    <input type="checkbox" />cơm <input type="checkbox" />phở
+    <input type="checkbox" />bun
+    <div>
+      <input type="radio" name="my-input2" id="yes" />
+      <label for="yes">Yes</label>
+
+      <input type="radio" name="my-input2" id="no" />
+      <label for="no">No</label>
+      <div style="font-size: 50px">
+        dư lieu <span style="font-size: 0.5em">data span</span> thẻ div
+      </div>
+      <p style="font-size: 1rem">đây là p kích thước</p>
+      <h4 style="color: #0073ff">đây là h4</h4>
+    </div>
+  </body>
+</html>
