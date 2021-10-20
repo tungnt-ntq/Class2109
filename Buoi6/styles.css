@@ -1,0 +1,36 @@
+.size {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  /* margin-left: 10px; */
+  /* relative di chuyển vị trí so với chính nó */
+  position: relative;
+  left: 10px;
+  top: 10px;
+  bottom: 10px;
+  right: 0px;
+  margin-left: 100px;
+}
+.absolute {
+  width: 40px;
+  height: 40px;
+  background-color: blueviolet;
+  /* di chuyển vị trí so với  cha gần nhất ở dạng relative/fix */
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.chau {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: burlywood;
+  left: 10px;
+  top: 10px;
+}
+.over {
+  width: 100px;
+  height: 50px;
+  border: solid 1px red;
+  overflow: auto;
+}
