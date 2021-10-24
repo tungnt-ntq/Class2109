@@ -1,2 +1,4 @@
-var a = "";
-console.log(!!a);
+do {
+  var input = prompt("enter number", 0);
+} while (isNaN(input));
+alert("number ", input);
