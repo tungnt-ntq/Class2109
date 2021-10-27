@@ -71,25 +71,26 @@
 // }
 
 // Cách 2 :
-
-let flag = true;
-let n = 15;
-if (n < 2) {
-  flag = false;
-} else if (n === 2) {
-  flag = true;
-} else if (n % 2 === 0) {
-  flag = false;
-} else {
-  for (let index = 3; index <= n / 2; index += 2) {
-    console.log("index", index);
-    if (n % index === 0) {
-      flag = false;
-      break;
+// 
+function checkPrime(n) {
+  let flag = true;
+  if (n < 2) {
+    flag = false;
+  } else if (n === 2) {
+    flag = true;
+  } else if (n % 2 === 0) {
+    flag = false;
+  } else {
+    for (let index = 3; index <= n / 2; index += 2) {
+      if (n % index === 0) {
+        flag = false;
+        break;
+      }
     }
   }
+  return flag;
 }
-if (flag == true) {
+if (checkPrime(97) == true) {
   console.log("n là số nguyên tố");
 } else {
   console.log("không phải số nguyên tố");
@@ -101,4 +102,4 @@ if (flag == true) {
 
 //  8p : Viết lại bài tím số nguyên tố. => tối ưu hết mức có thể.
 
-// btvn: Từ bài số 4 -> 10: 
+// btvn: Từ bài số 4 -> 10:
