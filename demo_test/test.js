@@ -1,26 +1,12 @@
-function Mouse(name) {
-  this.name = name;
+function makeCoffe(cb) {
+  console.log("start make coffe");
+  setTimeout(() => {
+    console.log("making... coffe");
+    return cb("ss");
+  }, 2000);
 }
-
-class Cat {
-  constructor(name) {
-    this.name = name;
+makeCoffe((r) => {
+  if (r) {
+    console.log("done coffe");
   }
-  run = () => {
-    console.log(`${this.name} is running`);
-  };
-}
-class Animal {
-  constructor(name) {
-    this.name = name;
-  }
-  fly = () => {
-    console.log(`${this.name} is running`);
-  };
-}
-class Bird extends Animal {}
-const mouse = new Mouse("tung");
-const cat = new Cat("Cat");
-cat.run();
-const bird = new Bird("bo cau");
-bird.fly();
+});

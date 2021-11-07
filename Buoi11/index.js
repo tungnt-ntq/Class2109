@@ -1,3 +1,7 @@
+var readlineSync = require("readline-sync");
+var userName = readlineSync.question("May I have your name? ");
+console.log("Hi " + userName + "!");
+
 // Array: sort, filter, map, reduce
 // Object: khai báo, truy xuất, thêm, xoá, cú pháp ngắn gọn, kiểm key, value...
 // Trao đổi về npm, yarn.
@@ -140,3 +144,12 @@ let sumWeight = animals.reduce((a, b) => {
 }, 0);
 //  0.weight + item1.weight
 console.log(sumWeight);
+// BÀi kiểm tra 
+// 1.Show all student
+// 2.Create student and return Menu
+// 3.Delete student
+// 4.Edit student
+// 5.Find student by name
+// 6.Sort student by name ascending 
+// 7.Sort student by age ascending 
+// 8.Exit
