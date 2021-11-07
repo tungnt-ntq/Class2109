@@ -1,8 +1,6 @@
 // Buỏi 12
 // NPM và yarn.
 // Chưa bài cũ Quản lý sinh viên.
-// Class trong JS.
-// Bổ sung kiến thức về OBject key, value, ...
 
 // 1. npm.
 
@@ -59,6 +57,66 @@ function createStudent() {
   saveFile();
   choise = 0;
 }
+function deleteStudent() {
+  let nameDel = readlineSync.question("What name do you want delete ? ");
+  //   let newArrStudent = student.filter((item) => {
+  //     return item.name !== nameDel;
+  //   });
+  //   student = newArrStudent;
+
+  let indexDel = student.findIndex((item) => {
+    return item.name === nameDel;
+  });
+  student.splice(indexDel, 1);
+  saveFile();
+  choise = 0;
+}
+function editStudent() {
+  let nameEdit = readlineSync.question("What name do you want edit ? ");
+  let indexEdit = student.findIndex((item) => {
+    return item.name === nameEdit;
+  });
+  // giả định name là require không được phép sửa.
+  let oldName = student[indexEdit].name;
+  let newAge = parseInt(readlineSync.question("age?"));
+  let sex = readlineSync.keyInSelect(sexIndex, "sex? male/female: 0/1");
+  let newStudent = {
+    name: oldName,
+    age: newAge,
+    sex: sexIndex[sex],
+  };
+  student.splice(indexEdit, 1, newStudent);
+  saveFile();
+  choise = 0;
+}
+function findStudent() {
+  let nameFind = readlineSync
+    .question("What name do you want find ? ")
+    .toLowerCase();
+  let listStudentFind = student.filter((item) => {
+    return item.name.toLowerCase() === nameFind;
+  });
+  console.log(listStudentFind);
+  saveFile();
+  choise = 0;
+}
+function sortByAge() {
+  student.sort((a, b) => a.age - b.age);
+  console.log(student);
+  saveFile();
+  choise = 0;
+}
+function sortByNameStudent() {
+  student.sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  });
+  console.log(student);
+  saveFile();
+  choise = 0;
+}
+
 while (true) {
   switch (parseInt(choise)) {
     case 0:
@@ -72,7 +130,27 @@ while (true) {
     case 2:
       createStudent();
       break;
+    case 3:
+      deleteStudent();
+      break;
+    case 4:
+      editStudent();
+      break;
+    case 5:
+      findStudent();
+      break;
+    case 6:
+      sortByNameStudent();
+      break;
+    case 7:
+      sortByAge();
+      break;
+    case 8:
+      process.exit();
+      break;
     default:
+      console.log("Ban phai chọn 1 số trong menu");
+      choise = 0;
       break;
   }
 }
