@@ -14,6 +14,7 @@
 // 7.Sort student by age ascending
 // 8.Exit
 var readlineSync = require("readline-sync");
+const shortid = require("shortid");
 var fs = require("fs");
 
 var showMenu = function () {
@@ -26,7 +27,9 @@ var showMenu = function () {
   console.log(" 5.Find student by name");
   console.log(" 6.Sort student by name ascending");
   console.log(" 7.Sort student by age ascending");
-  console.log(" 8.Exit");
+  console.log(" 8.Delete all student");
+  console.log(" 9. Sum student age");
+  console.log(" 10.Exit");
 };
 
 showMenu();
@@ -50,6 +53,7 @@ function createStudent() {
   let age = parseInt(readlineSync.question("age?"));
   let sex = readlineSync.keyInSelect(sexIndex, "sex? male/female: 0/1");
   student.push({
+    id: shortid.generate(),
     name: name,
     age: age,
     sex: sexIndex[sex],
@@ -59,6 +63,7 @@ function createStudent() {
 }
 function deleteStudent() {
   let nameDel = readlineSync.question("What name do you want delete ? ");
+  // C1
   //   let newArrStudent = student.filter((item) => {
   //     return item.name !== nameDel;
   //   });
@@ -116,6 +121,19 @@ function sortByNameStudent() {
   saveFile();
   choise = 0;
 }
+function deleteAllStudent() {
+  student = [];
+  saveFile();
+  choise = 0;
+}
+function sumStudentAge() {
+  let sum = student.reduce((a, b) => {
+    return (a = a + b.age);
+  }, 0);
+  console.log("Sum student: ", sum);
+  saveFile();
+  choise = 0;
+}
 
 while (true) {
   switch (parseInt(choise)) {
@@ -146,6 +164,12 @@ while (true) {
       sortByAge();
       break;
     case 8:
+      deleteAllStudent();
+      break;
+    case 9:
+      sumStudentAge();
+      break;
+    case 10:
       process.exit();
       break;
     default:

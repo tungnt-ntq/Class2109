@@ -11,7 +11,8 @@
   "dependencies": {
     "axios": "^0.24.0",
     "nodemon": "^2.0.14",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "jest": "^27.3.1"
