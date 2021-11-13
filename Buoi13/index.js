@@ -119,6 +119,19 @@ function chia(a, b, cb) {
     return cb(mil);
   }, 2000);
 }
+function callApi(cb) {
+  console.log("băt đầu call.");
+  setTimeout(() => {
+    return cb("Da lay duoc data");
+  }, 5000);
+}
+
+function getData(data) {
+  console.log(data);
+}
+
+callApi(getData);
+
 function ketqua(daylon, daynho, chieucao, a, b, c, cb) {
   cong(daylon, daynho, (resultTong) => {
     nhan(resultTong, chieucao, (resultNhan) => {
