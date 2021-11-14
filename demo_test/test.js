@@ -5,8 +5,10 @@ if (window.Promise) {
     var request = new XMLHttpRequest();
 
     request.open("GET", "http://api.icndb.com/jokes/random");
+    console.log("bb data", request.response);
     request.onload = function () {
       if (request.status == 200) {
+        console.log("bb data", request.response);
         resolve(request.response); // we got data here, so resolve the Promise
       } else {
         reject(Error(request.statusText)); // status is not 200 OK, so reject
@@ -22,17 +24,15 @@ if (window.Promise) {
 
   console.log("Asynchronous request made.");
 
-  promise.then(
-    function (data) {
+  promise
+    .then(function (data) {
       console.log("Got data! Promise fulfilled.");
       document.getElementsByTagName("body")[0].textContent =
         JSON.parse(data).value.joke;
-    },
-    function (error) {
-      console.log("Promise rejected.");
-      console.log(error.message);
-    }
-  );
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 } else {
   console.log("Promise not available");
 }
