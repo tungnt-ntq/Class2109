@@ -103,14 +103,15 @@ function cong(a, b, cb) {
 //   console.log("Kêt qua phép cong", params);
 // }
 // cong(20, 13, KetquaPhepcong);
-function nhan(a, b, cb) {
+function nhan(a, b, functionCB) {
   console.log("băt đầu nhan.");
   setTimeout(() => {
     let mul = a * b;
     console.log("nhan xong", mul);
-    return cb(mul);
+    return functionCB(mul);
   }, 5000);
 }
+
 function chia(a, b, cb) {
   console.log("băt đầu chia.");
   setTimeout(() => {
@@ -131,7 +132,7 @@ function getData(data) {
 }
 
 callApi(getData);
-
+//call back hell
 function ketqua(daylon, daynho, chieucao, a, b, c, cb) {
   cong(daylon, daynho, (resultTong) => {
     nhan(resultTong, chieucao, (resultNhan) => {
